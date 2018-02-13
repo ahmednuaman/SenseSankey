@@ -14,7 +14,7 @@
 
 
 .node rect {
-  cursor: crosshair
+  cursor: crosshair;
   fill-opacity: .9;
   shape-rendering: crispEdges;
 }
