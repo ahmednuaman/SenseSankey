@@ -1,0 +1,157 @@
+{
+  "initialProperties": {
+    "version": 2.2,
+    "qHyperCubeDef": {
+      "qDimensions": [],
+      "qMeasures": [],
+      "qInitialDataFetch": [
+        {
+          "qWidth": 5,
+          "qHeight": 2000
+        }
+      ]
+    },
+    "selectionMode": "QUICK"
+  },
+  "definition": {
+    "type": "items",
+    "component": "accordion",
+    "items": {
+      "dimensions": {
+        "uses": "dimensions",
+        "min": 2,
+        "max": 4
+      },
+      "measures": {
+        "uses": "measures",
+        "min": 1,
+        "max": 1
+      },
+      "settings": {
+        "uses": "settings",
+        "type": "items",
+        "items": {
+          "SankeyGroup": {
+            "label": "Sankey Settings v2.2",
+            "type": "items",
+            "items": {
+              "flowMax": {
+                "type": "integer",
+                "label": "Flow max (10 to 2000)",
+                "ref": "flowMax (max is 2000)",
+                "defaultValue": 500,
+                "min": 10,
+                "max": 2000
+              },
+              "flowColor": {
+                "type": "string",
+                "component": "color-picker",
+                "expression": "optional",
+                "label": "Color Flow",
+                "ref": "flowColorCustom",
+                "dualOutput": true,
+                "defaultValue": "#999999"
+              },
+              "Separateur": {
+                "ref": "displaySeparateur",
+                "type": "string",
+                "component": "dropdown",
+                "label": "Pop-up Separator",
+                "options": [
+                  {
+                    "value": " - ",
+                    "label": "-"
+                  },
+                  {
+                    "value": " <-> ",
+                    "label": "<->"
+                  },
+                  {
+                    "value": " → ",
+                    "label": " → "
+                  }
+                ],
+                "defaultValue": " - "
+              },
+              "Format": {
+                "ref": "displayFormat",
+                "type": "string",
+                "component": "dropdown",
+                "label": "Pop-up Format",
+                "options": [
+                  {
+                    "value": "Number2",
+                    "label": "1000.12"
+                  },
+                  {
+                    "value": "Number1",
+                    "label": "1000.1"
+                  },
+                  {
+                    "value": "Number",
+                    "label": "1000"
+                  }
+                ],
+                "defaultValue": "Number"
+              },
+              "currencySymbol": {
+                "type": "string",
+                "label": "Currency Symbol",
+                "ref": "currencySymbol",
+                "defaultValue": "€"
+              },
+              "Palette": {
+                "ref": "displayPalette",
+                "type": "string",
+                "component": "dropdown",
+                "label": "Palette",
+                "options": [
+                  {
+                    "value": "D3-20",
+                    "label": "Ordinal Palette 20 colors"
+                  },
+                  {
+                    "value": "D3-20c",
+                    "label": "Blue-Grey Palette 20 colors"
+                  },
+                  {
+                    "value": "D3-20b",
+                    "label": "Blue-Purple Palette 20 colors"
+                  },
+                  {
+                    "value": "20",
+                    "label": "Palette 20 colors"
+                  },
+                  {
+                    "value": "20a",
+                    "label": "Other Palette 20 colors"
+                  }
+                ],
+                "defaultValue": "D3-20"
+              },
+              "colorPersistence": {
+                "ref": "colorPersistence",
+                "component": "switch",
+                "type": "boolean",
+                "translation": "Persistence",
+                "defaultValue": false,
+                "trueOption": {
+                  "value": true,
+                  "translation": "properties.on"
+                },
+                "falseOption": {
+                  "value": false,
+                  "translation": "properties.off"
+                },
+                "show": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "snapshot": {
+    "canTakeSnapshot": true
+  }
+}
